@@ -1,0 +1,15 @@
+---
+title:
+- type: main
+  text: OTT平台开源解决方案
+- type: subtitle
+  text: somestuff
+creator:
+- role: author
+  text: Zhang Ping
+date: 2014
+language: zh_CN
+description: 
+cover-image: ottsolution.png
+stylesheet: style.css
+...
