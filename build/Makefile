@@ -1,5 +1,5 @@
 BUILD = build
-BOOKNAME = ottsolutionA
+BOOKNAME = i4tvsolution
 METADATA = metadata.yaml
 SRC_DIR = ../src/
 TOC = --toc
@@ -31,7 +31,7 @@ $(BUILD)/epub/$(BOOKNAME).epub: $(TITLE)
 $(BUILD)/html/$(BOOKNAME).html:
 	mkdir -p $(BUILD)/html
 	cp -r ../images/ $(BUILD)/images
-	cp ottsolution.png $(BUILD)/html
+	cp i4tvsolution.png $(BUILD)/html
 	@tmpdir=`pwd`;\
 		cd $(BUILD)/html;\
 		mdtogh --css --user=$(GHUSER) --pass=$(GHPASS) --toc --toc_file=$$tmpdir/$(SRC_DIR)Readme.md --book=$$tmpdir/book.json --file_reg='^\d.+\.md$$' $$tmpdir/$(SRC_DIR);
@@ -60,7 +60,7 @@ $(BUILD)/mobi/$(BOOKNAME).mobi: $(TITLE)
 		exit 1;\
 		fi; \
 		$$ebook_convert_cmd "$(BUILD)/epub/$(BOOKNAME).epub" "$(BUILD)/mobi/$(BOOKNAME).mobi" \
-		--cover ottsolution.png \
+		--cover i4tvsolution.png \
 		--authors July \
 		--level1-toc 'h1'\
 		--language zh_CN ;
