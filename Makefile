@@ -1,7 +1,7 @@
 BUILD = build
 BOOKNAME = i4tvsolution
 METADATA = metadata.yaml
-SRC_DIR = ../src/
+SRC_DIR = src/
 TOC = --toc
 LATEX_CLASS = report
 GHUSER = 
@@ -30,8 +30,8 @@ $(BUILD)/epub/$(BOOKNAME).epub: $(TITLE)
 
 $(BUILD)/html/$(BOOKNAME).html:
 	mkdir -p $(BUILD)/html
-	cp -r ../images/ $(BUILD)/images
-	cp i4tvsolution.png $(BUILD)/html
+	cp -r images $(BUILD)/images
+	cp images/i4tvsolution.png $(BUILD)/html
 	@tmpdir=`pwd`;\
 		cd $(BUILD)/html;\
 		mdtogh --css --user=$(GHUSER) --pass=$(GHPASS) --toc --toc_file=$$tmpdir/$(SRC_DIR)Readme.md --book=$$tmpdir/book.json --file_reg='^\d.+\.md$$' $$tmpdir/$(SRC_DIR);
